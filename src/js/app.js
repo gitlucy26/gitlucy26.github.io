@@ -22,33 +22,7 @@ function searchWeather(searchTerm) {
 
 function init(resultFromServer) {
     switch (resultFromServer.weather[0].main) {
-        case 'Clear':
-            document.body.style.backgroundImage = "url('img/clear.jpg')";
-            break;
         
-        case 'Clouds':
-            document.body.style.backgroundImage = "url('img/cloudy.jpg')";
-            break;
-
-        case 'Rain':
-        case 'Drizzle':
-            document.body.style.backgroundImage = "url('img/rain.jpg')";
-            break;
-
-        case 'Mist':
-            document.body.style.backgroundImage = "url('img/mist.jpg')";
-            break;    
-        
-        case 'Thunderstorm':
-            document.body.style.backgroundImage = "url('img/storm.jpg')";
-            break;
-        
-        case 'Snow':
-            document.body.style.backgroundImage = "url('img/snow.jpg')";
-            break;
-
-        default:
-            break;
     }
 
     let weatherDescriptionHeader = document.getElementById('weatherDescriptionHeader');
@@ -85,11 +59,4 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 });
 
 
-navigator.serviceWorker.register('/sw.js');
-var deferredPrompt;
-window.addEventListener('beforeinstallprompt', function(event) {
-  console.log('beforeinstallprompt fired');
-  event.preventDefault();
-  deferredPrompt = event;
-  return false;
-});
+//navigator.serviceWorker.register('/sw.js');
