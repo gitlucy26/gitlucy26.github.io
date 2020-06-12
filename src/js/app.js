@@ -11,7 +11,7 @@ function getSearchMethod(searchTerm) {
 
 function searchWeather(searchTerm) {
     getSearchMethod(searchTerm);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
         .then((result) => {
             return result.json();
         }).then((res) => {
@@ -22,7 +22,33 @@ function searchWeather(searchTerm) {
 
 function init(resultFromServer) {
     switch (resultFromServer.weather[0].main) {
+        case 'Clear':
+            
+            break;
         
+        case 'Clouds':
+            
+            break;
+
+        case 'Rain':
+        case 'Drizzle':
+           
+            break;
+
+        case 'Mist':
+            
+            break;    
+        
+        case 'Thunderstorm':
+            
+            break;
+        
+        case 'Snow':
+            
+            break;
+
+        default:
+            break;
     }
 
     let weatherDescriptionHeader = document.getElementById('weatherDescriptionHeader');
@@ -59,4 +85,11 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 });
 
 
-//navigator.serviceWorker.register('/sw.js');
+navigator.serviceWorker.register('/sw.js');
+var deferredPrompt;
+window.addEventListener('beforeinstallprompt', function(event) {
+  console.log('beforeinstallprompt fired');
+  event.preventDefault();
+  deferredPrompt = event;
+  return false;
+});
