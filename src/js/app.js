@@ -42,9 +42,9 @@ function init(resultFromServer) {
     windSpeed.innerHTML = 'Wind Speed: ' + Math.floor(resultFromServer.wind.speed) + ' meter/s';
     cityHeader.innerHTML = resultFromServer.name;
     humidity.innerHTML = 'Humidity levels: ' + resultFromServer.main.humidity +  '%';
-    tempMin.innerHTML = 'Temp Min:' + resultFromServer.main.temp_min;
-    tempMax.innerHTML = 'Temp Max:' + resultFromServer.main.temp_max;
-    feelsLike.innerHTML = 'Feels Like:' + resultFromServer.main.feels_like;
+    tempMin.innerHTML = 'Temp Min:' + Math.floor(resultFromServer.main.temp_min) + '&#176;';
+    tempMax.innerHTML = 'Temp Max:' + Math.floor(resultFromServer.main.temp_max) + '&#176;';
+    feelsLike.innerHTML = 'Feels Like:' + Math.floor(resultFromServer.main.feels_like) + '&#176;' ;
     console.log(resultFromServer);
 
     
