@@ -20,7 +20,10 @@ function searchWeather(searchTerm) {
    
 }
 
-
+function init(resultFromServer) {
+    resultFromServer.weather[0].main
+   
+    }
 
     let weatherDescriptionHeader = document.getElementById('weatherDescriptionHeader');
     let temperature = document.getElementById('temperature');
