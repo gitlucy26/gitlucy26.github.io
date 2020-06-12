@@ -22,33 +22,7 @@ function searchWeather(searchTerm) {
 
 function init(resultFromServer) {
     switch (resultFromServer.weather[0].main) {
-        case 'Clear':
-            
-            break;
         
-        case 'Clouds':
-            
-            break;
-
-        case 'Rain':
-        case 'Drizzle':
-           
-            break;
-
-        case 'Mist':
-            
-            break;    
-        
-        case 'Thunderstorm':
-            
-            break;
-        
-        case 'Snow':
-            
-            break;
-
-        default:
-            break;
     }
 
     let weatherDescriptionHeader = document.getElementById('weatherDescriptionHeader');
